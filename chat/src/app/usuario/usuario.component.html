@@ -1,0 +1,29 @@
+<div class="usuario">
+  <div class="nombre">
+    <p>Usuario: {{nombre}}</p>
+  </div>
+  <div class="contenido">
+    <div class="formulario">
+      <label for="mensaje">Mensaje</label>
+      <textarea name="mensaje" id="mensaje" [(ngModel)]="contenido" cols="80" rows="4"></textarea>
+      <button type="button" class="btn btn-primary" (click)="sendMessage()">Guardar</button>
+    </div>
+    <div class="mensajes">
+      @for (item of mensajes; track $index) {
+        @if(item.user == nombre){
+          <div class="local">
+            <p>
+              {{item.contenido}}
+            </p>
+          </div>
+        }@else{
+          <div class="remoto">
+            <p>
+              {{item.contenido}}
+            </p>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>
