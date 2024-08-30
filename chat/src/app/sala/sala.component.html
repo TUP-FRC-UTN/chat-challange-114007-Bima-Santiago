@@ -1,0 +1,10 @@
+<div id="sala">
+  <div class="header">
+    <p>Sala de chat</p>
+    <h3>Conversación</h3>
+  </div>
+  <div class="usuarios">
+    <app-usuario nombre="Pepe" (mensaje)="addMsg($event)" [mensajes]="mensajes"></app-usuario>
+    <app-usuario nombre="María" (mensaje)="addMsg($event)" [mensajes]="mensajes"></app-usuario>
+  </div>
+</div>
